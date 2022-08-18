@@ -26,13 +26,9 @@ export const useCountries = () => {
     arrayAux.push(dataAux);
   }
 
-  console.log(data?.map((q) => q.currencies));
-
   return {
     countries: arrayAux || [],
     isLoading,
     totalPages,
   };
 };
-
-export const useRegions = () => {};

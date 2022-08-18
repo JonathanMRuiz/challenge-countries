@@ -3,9 +3,8 @@ import { useState } from "react";
 import { useCountries } from "../hooks/useCountries";
 import { Country } from "./Country";
 
-export const Countries = () => {
+export const Countries = ({ countries, isLoading, totalPages }) => {
   const [page, setPage] = useState(0);
-  const { countries, isLoading, totalPages } = useCountries();
 
   const currentCountriesPage = countries[page] || [];
 
@@ -27,6 +26,7 @@ export const Countries = () => {
                 name={country.name.common}
                 flag={country.flag}
                 population={country.population}
+                region={country.region}
               />
             </div>
           ))
